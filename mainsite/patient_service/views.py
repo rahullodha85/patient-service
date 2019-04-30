@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def opt(request):
     return HttpResponse("Django Unchained!")
+
+def test(request):
+    return HttpResponse("test")
