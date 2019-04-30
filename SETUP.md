@@ -14,4 +14,5 @@
 1. Install mysql workbench. https://www.mysql.com/products/workbench/
 2. Docker pull mariadb from docker hub
 3. Run `docker run --name test-mariadb -e MYSQL_ROOT_PASSWORD=test123 -d -p 3306:3306 mariadb` to run mariadb in a docker container.
+4. Connect to mariadb and Create a new database named `medicalclinic`.
 4. Navigate to mainsite directory and run `python manage.py makemigrations` and `python manage.py migrate`
