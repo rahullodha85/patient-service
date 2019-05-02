@@ -1,0 +1,10 @@
+version: '3'
+services:
+  mariadb:
+    container_name: test
+    ports:
+      - "3306:3306"
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=test123
+      - MYSQL_DATABASE=medicalclinic
