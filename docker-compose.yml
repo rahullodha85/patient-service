@@ -1,5 +1,18 @@
 version: '3'
 services:
+  patient-service:
+    container_name: patient-service
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+    depends_on:
+      - mariadb
+#    links:
+#      - mariadb
+    networks:
+      - my-net
+
   mariadb:
     container_name: test
     ports:
@@ -8,3 +21,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=test123
       - MYSQL_DATABASE=medicalclinic
+    networks:
+      - my-net
+networks:
+  my-net:
+    driver: bridge
