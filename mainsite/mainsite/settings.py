@@ -80,10 +80,17 @@ DATABASES = {
         'NAME': 'medicalclinic',
         'USER': 'root',
         'PASSWORD': 'test123',
-        # 'HOST': '127.0.0.1',
-        'HOST': 'mariadb',
+        'HOST': '127.0.0.1',
         'PORT': 3306
     }
+    # 'dockerized': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'medicalclinic',
+    #     'USER': 'root',
+    #     'PASSWORD': 'test123',
+    #     'HOST': 'mariadb',
+    #     'PORT': 3306
+    # }
 }
 
 
