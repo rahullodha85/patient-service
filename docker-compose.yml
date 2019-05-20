@@ -15,7 +15,7 @@ services:
       - my-net
 
   mariadb:
-    container_name: test
+    container_name: mariadb
     ports:
       - "3306:3306"
     image: mariadb
