@@ -5,7 +5,7 @@ docker-compose up -d
 
 if [ ! -d "$DIRECTORY" ]; then
   echo creating virtual environment
-  python3 -m venv ../.venv-django
+  python3 -m venv ../.venv_django
 fi
 echo "activating virtual environment"
 source ../.venv_django/bin/activate
