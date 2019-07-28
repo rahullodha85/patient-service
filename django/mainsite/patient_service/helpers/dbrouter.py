@@ -1,4 +1,4 @@
-from .. import env
+from django.mainsite.patient_service import env
 
 
 class DBRouter:
