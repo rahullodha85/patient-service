@@ -87,6 +87,7 @@ celerybeat-schedule
 env/
 venv/
 .venv_django/
+.venv_flask/
 ENV/
 env.bak/
 venv.bak/
