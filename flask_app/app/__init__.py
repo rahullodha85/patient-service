@@ -4,7 +4,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-from flask_app.app.config import config_vals
+from app.config import config_vals
 
 db = SQLAlchemy()
 
@@ -14,7 +14,7 @@ def create_app(config_name):
     # app.config.from_pyfile('config.py')
     db.init_app(application)
     migrate = Migrate(application, db)
-    from flask_app.app.models.patient import patient
+    from .models.patient import Patient
     return application
 
 

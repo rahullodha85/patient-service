@@ -11,7 +11,7 @@ class DevConfig(Config):
     Local dev config
     """
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:test123@localhost:3306/flask-practice'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:test123@localhost:3306/medicalclinic'
 
 
 class ProdConfig(Config):

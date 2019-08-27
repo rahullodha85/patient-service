@@ -5,10 +5,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 # db = SQLAlchemy(app)
 # migrate = Migrate(app, db)
-from flask_app.app import app
+from app import app
+from app.routes.patient import patient_controller
 
-# app.register_blueprint(user_controller, url_prefix='/user')
-
+app.register_blueprint(patient_controller, url_prefix='/patient')
 
 @app.route('/')
 def index():
@@ -16,4 +16,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
