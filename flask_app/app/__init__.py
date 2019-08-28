@@ -14,7 +14,8 @@ def create_app(config_name):
     # app.config.from_pyfile('config.py')
     db.init_app(application)
     migrate = Migrate(application, db)
-    from .models.patient import Patient
+    from app.models.patient import Patient
+    from app.models.user import User
     return application
 
 
