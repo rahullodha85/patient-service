@@ -22,3 +22,17 @@ class Patient(db.Model):
             'phone-number': self.phone_number,
             'address': self.address
         }
+
+
+# This is for GUS
+class Trades(db.Model):
+    Product = db.Column(db.String(20))
+    Reference = db.Column(db.String(20), primary_key=True)
+    ProviderAction = db.Column(db.String(20))
+
+    def serialize(self):
+        return {
+            'Product': self.Product,
+            'Reference #': self.Reference,
+            'Provider Action': self.ProviderAction
+        }

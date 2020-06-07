@@ -12,6 +12,7 @@ class DevConfig(Config):
     """
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:test123@localhost:3306/medicalclinic'
+    AUTH_URL = 'http://localhost:8000'
 
 
 class ProdConfig(Config):

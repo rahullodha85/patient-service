@@ -1,9 +1,7 @@
 from functools import wraps
 
-import jwt
+import requests
 from flask import request, jsonify, current_app
-
-from app.models.user import User
 
 
 def authenticate(f):
@@ -16,11 +14,13 @@ def authenticate(f):
         if not token:
             return jsonify({'Message': 'Auth token is missing'}), 401
 
-        try:
-            data = jwt.decode(token, current_app.config['SECRET_KEY'])
-            current_user = User.query.filter_by(public_id=data.get('public_id')).first()
-        except:
-            return jsonify({'Message': 'Token is invalid'})
-
+        headers = request.headers
+        data = requests.request('GET', current_app.config.get('AUTH_URL') + '/authenticate/verify/{}'.format(token),
+                                    headers=headers)
+        current_user = None
+        if data.status_code == 200:
+            current_user = data.json()
+        else:
+            return jsonify({'Message': 'Token is invalid'}), 401
         return f(current_user, *args, **kwargs)
     return decorated
