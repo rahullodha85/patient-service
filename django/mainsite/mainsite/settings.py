@@ -76,15 +76,40 @@ WSGI_APPLICATION = 'mainsite.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'medicalclinic',
+        # 'USER': 'root',
+        # 'PASSWORD': 'test123',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': 3306
+    },
+    'local': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'medicalclinic',
-        'USER': 'root',
-        'PASSWORD': 'test123',
-        # 'HOST': '127.0.0.1',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': 3306
+    },
+    'dockerized': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'medicalclinic',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': 'mariadb',
+        'PORT': 3306
+    },
+    'production': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'medicalclinic',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': 3306
     }
 }
+
+DATABASE_ROUTERS = ['patient_service.helpers.dbrouter.DBRouter']
 
 
 # Password validation
